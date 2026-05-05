@@ -1,6 +1,7 @@
+using Shared;
 using SimpleList;
 
-public class SinglyLinkedList<T> : ISinglyLinkedList<T>
+public class SinglyLinkedList<T> : ILinkedList<T>
 {
     private Node<T>? _head;
 

@@ -1,6 +1,7 @@
 ﻿using SimpleList;
 
-var List = new SinglyLinkedList<string>();
+// var List = new SinglyLinkedList<string>();
+var List = new DoubleLinkedList<string>();
 var option = string.Empty;
 var value = string.Empty;
 do
@@ -40,6 +41,11 @@ do
                 List.Reverse();
                 break;
             case "6":
+                Console.WriteLine(List);
+                break;
+            case "7":
+                break;
+            case "8":
                 Console.WriteLine(List);
                 break;
             case "0":
