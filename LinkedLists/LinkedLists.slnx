@@ -1,4 +1,6 @@
 <Solution>
-  <Project Path="Backend/Backend.csproj" />
+  <Project Path="Shared/Shared.csproj" />
+  <Project Path="SimpleList/SimpleList.csproj" />
+  <Project Path="DoubleList/DoubleList.csproj" />
   <Project Path="Frontend/Frontend.csproj" />
 </Solution>

@@ -1,6 +1,6 @@
-using Backend;
+using SimpleList;
 
-public class SinglyLinkedList<T>
+public class SinglyLinkedList<T> : ISinglyLinkedList<T>
 {
     private Node<T>? _head;
 

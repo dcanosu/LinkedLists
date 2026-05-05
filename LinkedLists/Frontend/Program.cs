@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-using Backend;
+﻿using SimpleList;
 
 var List = new SinglyLinkedList<string>();
 var option = string.Empty;

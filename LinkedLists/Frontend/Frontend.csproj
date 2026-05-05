@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Backend\Backend.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\SimpleList\SimpleList.csproj" />
+    <ProjectReference Include="..\DoubleList\DoubleList.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
