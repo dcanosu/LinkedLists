@@ -48,6 +48,9 @@ do
             case "8":
                 Console.WriteLine(List);
                 break;
+            case "9":
+                Console.WriteLine(List.ToStringReverse());
+                break;
             case "0":
                 Console.WriteLine("Exiting...");
                 break;
@@ -67,6 +70,7 @@ string Menu()
     Console.WriteLine("6. Order the list");
     Console.WriteLine("7. Insert ordered");
     Console.WriteLine("8. Show the list");
+    Console.WriteLine("9. Show the list in reverse");
     Console.WriteLine("0. Exit");
     Console.WriteLine("Enter a option: ");
     return Console.ReadLine() ?? string.Empty;

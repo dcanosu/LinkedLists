@@ -25,6 +25,19 @@ public class DoubleLinkedList<T> : ILinkedList<T>
         return result;
     }
 
+    public string ToStringReverse()
+    {
+        var current = _tail;
+        var result = string.Empty;
+        while (current != null)
+        {
+            result += $"{current.Data} -> ";
+            current = current.Previous;
+        }
+        result += "null";
+        return result;
+    }
+
     public void InsertAtBeginning(T data)
     {
         var newNode = new Node<T>(data);
@@ -44,17 +57,17 @@ public class DoubleLinkedList<T> : ILinkedList<T>
     public void InsertAtEnding(T data)
     {
         var newNode = new Node<T>(data);
-        if (_head == null)
+        if (_tail == null)
         {
             _head = newNode;
-            return;
+            _tail = newNode;
         }
-        var current = _head;
-        while (current.Next != null)
+        else
         {
-            current = current.Next;
+            _tail.Next = newNode;
+            newNode.Previous = _tail;
+            _tail = newNode;
         }
-        current.Next = newNode;
     }
     public bool Contains(T data)
     {
@@ -71,20 +84,26 @@ public class DoubleLinkedList<T> : ILinkedList<T>
     }
     public void Remove(T data)
     {
-        if (_head == null) return;
-
-        if (_head.Data != null && _head.Data.Equals(data))
-        {
-            _head = _head.Next;
-            return;
-        }
-
         var current = _head;
-        while (current.Next != null)
+        while (current != null)
         {
-            if (current.Next.Data != null && current.Next.Data.Equals(data))
-            {
-                current.Next = current.Next.Next;
+            if (current.Data!.Equals(data))
+            { 
+                if (current == _head) // Found at the head
+                {
+                    _head = current.Next;
+                    _head!.Previous = null;
+                }
+                else if (current == _tail) // Found at the tail
+                {
+                    _tail = current.Previous;
+                    _tail!.Next = null;
+                }
+                else // Found in the middle
+                {
+                    current.Previous!.Next = current.Next;
+                    current.Next!.Previous = current.Previous;
+                }
                 return;
             }
             current = current.Next;
