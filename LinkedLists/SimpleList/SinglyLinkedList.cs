@@ -92,4 +92,14 @@ public class SinglyLinkedList<T> : ILinkedList<T>
         }
         _head = previous;
     }
+
+    public void InsertOrdered(T data)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Sort()
+    {
+        throw new NotImplementedException();
+    }
 }

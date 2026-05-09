@@ -71,16 +71,7 @@ public class DoubleLinkedList<T> : ILinkedList<T>
     }
     public bool Contains(T data)
     {
-        var current = _head;
-        while (current != null)
-        {
-            if (current.Data != null && current.Data.Equals(data))
-            {
-                return true;
-            }
-            current = current.Next;
-        }
-        return false;
+        throw new NotImplementedException();
     }
     public void Remove(T data)
     {
@@ -111,15 +102,16 @@ public class DoubleLinkedList<T> : ILinkedList<T>
     }
     public void Reverse()
     {
-        Node<T>? previous = null;
-        var current = _head;
-        while (current != null)
-        {
-            var next = current.Next;
-            current.Next = previous;
-            previous = current;
-            current = next;
-        }
-        _head = previous;
+        throw new NotImplementedException();
+    }
+
+    public void InsertOrdered(T data)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Sort()
+    {
+        throw new NotImplementedException();
     }
 }
